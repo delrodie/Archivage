@@ -82,7 +82,7 @@
                                     <button type="button" class="btn btn-sm md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                         <span>
                                           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                                            {{ 'layout.hello_user'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                                           {% endif %}
                                         </span>
                                         <img src="{{ asset('ressources/images/avatar.png')}}" alt=""> </button>
@@ -189,13 +189,13 @@
                                     <a href="javascript:;" class="text-uppercase">
                                         <i class="icon-doc"></i> NUMERISATIONS </a>
                                    <ul class="dropdown-menu dropdown-menu-fw">
-                                     <li class="dropdown more-dropdown-sub">
+                                     <!--<li class="dropdown more-dropdown-sub">
                                          <a href="javascript:;"> Type document </a>
                                          <ul class="dropdown-menu">
                                            <li><a href="#">Ajouter</a></li>
                                            <li><a href="#">Liste</a></li>
                                          </ul>
-                                     </li>
+                                     </li>-->
                                      <li class="dropdown more-dropdown-sub">
                                          <a href="javascript:;"> Document </a>
                                          <ul class="dropdown-menu">
@@ -203,7 +203,7 @@
                                            <li><a href="#">Liste</a></li>
                                          </ul>
                                      </li>
-                                     <li class="dropdown more-dropdown-sub">
+                                     <!--<li class="dropdown more-dropdown-sub">
                                          <a href="javascript:;"> Transfert </a>
                                          <ul class="dropdown-menu">
                                            <li><a href="#">Ajouter</a></li>
@@ -216,7 +216,7 @@
                                            <li><a href="#">Ajouter</a></li>
                                            <li><a href="#">Liste</a></li>
                                          </ul>
-                                     </li>
+                                     </li>-->
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-fw dropdown-fw-disabled  ">

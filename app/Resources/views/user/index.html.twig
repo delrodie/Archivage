@@ -80,7 +80,7 @@
               <td class="text-center">{% if user.lastLogin %}{{ user.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>
               <td class="text-center">{{ user.loginCount }}</td>
               <td class="text-center">
-                {% if user.locked %}
+                {% if user.enabled %}
                   <span class="green"><i class="fa fa-lock" aria-hidden="true"></i></span>
                 {% else %}
                   <span class="red"><i class="fa fa-check" aria-hidden="true"></i></span>

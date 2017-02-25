@@ -34,7 +34,7 @@ class UserType extends AbstractType
                   )
             ))
             //->add('emailCanonical')
-            //->add('enabled')
+            ->add('enabled')
             //->add('salt')
             ->add('password', PasswordType::class, array(
                   'attr'  => array(
@@ -42,7 +42,7 @@ class UserType extends AbstractType
                   )
             ))
             //->add('lastLogin')
-            ->add('locked')
+            //->add('locked')
             //->add('expired')
             //->add('expiresAt')
             //->add('confirmationToken')

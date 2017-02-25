@@ -94,9 +94,9 @@ class User extends BaseUser {
         return $this->enabled;
     }
 
-    function getLocked() {
+    /*function getLocked() {
         return $this->locked;
-    }
+    }*/
 
     function getExpired() {
         return $this->expired;

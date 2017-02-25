@@ -24,12 +24,12 @@ class RayonnageType extends AbstractType
                   )
             ))
               //->add('slug')
-              ->add('bloc', TextType::class, array(
+              /*->add('bloc', TextType::class, array(
                   'attr'  => array(
                       'class' => 'form-control',
                       'autocomplete'  => 'off'
                   )
-            ))
+            ))*/
               ->add('description', TextareaType::class, array(
                   'attr'  => array(
                       'class' => 'form-control'

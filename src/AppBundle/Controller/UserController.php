@@ -93,7 +93,17 @@ class UserController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            //$this->getDoctrine()->getManager()->flush
+            $em = $this->getDoctrine()->getManager();
+
+            $user->setEnabled(true);
+            //Encodage du mot de passe
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($encoded);
+
+            $em->persist($user);
+            $em->flush($user);
 
             return $this->redirectToRoute('admin_user_edit', array('id' => $user->getId()));
         }
