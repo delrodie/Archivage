@@ -124,6 +124,11 @@ class Definitive
     private $epi;
 
     /**
+    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Document", mappedBy="definitive")
+    */
+    private $documents;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="tampon1", type="string", length=10, nullable=true)
@@ -561,5 +566,46 @@ class Definitive
     public function getEpi()
     {
         return $this->epi;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add document
+     *
+     * @param \AppBundle\Entity\Document $document
+     *
+     * @return Definitive
+     */
+    public function addDocument(\AppBundle\Entity\Document $document)
+    {
+        $this->documents[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \AppBundle\Entity\Document $document
+     */
+    public function removeDocument(\AppBundle\Entity\Document $document)
+    {
+        $this->documents->removeElement($document);
+    }
+
+    /**
+     * Get documents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocuments()
+    {
+        return $this->documents;
     }
 }
