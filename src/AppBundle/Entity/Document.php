@@ -102,6 +102,11 @@ class Document
     */
     private $definitive;
 
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Piecejointe", cascade={"persist", "remove"})
+     */
+     private $piecejointe;
+
 
     /**
      * Get id
@@ -375,5 +380,29 @@ class Document
     public function getDefinitive()
     {
         return $this->definitive;
+    }
+
+    /**
+     * Set piecejointe
+     *
+     * @param \AppBundle\Entity\Piecejointe $piecejointe
+     *
+     * @return Document
+     */
+    public function setPiecejointe(\AppBundle\Entity\Piecejointe $piecejointe = null)
+    {
+        $this->piecejointe = $piecejointe;
+
+        return $this;
+    }
+
+    /**
+     * Get piecejointe
+     *
+     * @return \AppBundle\Entity\Piecejointe
+     */
+    public function getPiecejointe()
+    {
+        return $this->piecejointe;
     }
 }
