@@ -62,7 +62,6 @@
         <tr>
         <th class="text-center"> ID </th>
         <th class="text-center"> RAYONNAGE </th>
-        <th class="text-center"> BLOC </th>
         <th class="text-center"> DESCRIPTION </th>
         <th class="text-center"> STATUT </th>
         </tr>
@@ -72,7 +71,6 @@
             <tr>
               <td class="text-right">{{ rayonnage.id }}</td>
               <td class="text-left"><a href="{{ path('rayonnage_edit', { 'slug': rayonnage.slug }) }}">{{ rayonnage.libelle }}</a></td>
-              <td class="text-center">{{ rayonnage.bloc }}</td>
               <td class="text-justify">{{ rayonnage.description }}</td>
               <td>
                 {% if rayonnage.statut %}
