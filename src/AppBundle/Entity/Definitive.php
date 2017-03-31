@@ -608,4 +608,8 @@ class Definitive
     {
         return $this->documents;
     }
+
+    public function __toString() {
+        return $this->getLibelle();
+    }
 }

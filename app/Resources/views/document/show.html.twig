@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Document</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ document.id }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ document.reference }}</td>
+            </tr>
+            <tr>
+                <th>Resume</th>
+                <td>{{ document.resume }}</td>
+            </tr>
+            <tr>
+                <th>Motcle</th>
+                <td>{{ document.motcle }}</td>
+            </tr>
+            <tr>
+                <th>Dateprod</th>
+                <td>{{ document.dateprod }}</td>
+            </tr>
+            <tr>
+                <th>Producteur</th>
+                <td>{{ document.producteur }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{% if document.statut %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Publiepar</th>
+                <td>{{ document.publiePar }}</td>
+            </tr>
+            <tr>
+                <th>Modifiepar</th>
+                <td>{{ document.modifiePar }}</td>
+            </tr>
+            <tr>
+                <th>Publiele</th>
+                <td>{{ document.publieLe }}</td>
+            </tr>
+            <tr>
+                <th>Modifiele</th>
+                <td>{{ document.modifieLe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('document_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('document_edit', { 'id': document.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

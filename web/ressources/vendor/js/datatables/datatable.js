@@ -51,16 +51,16 @@ var Datatable = function() {
                         // data tables spesific
                         "lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
                         "info": "<span class='seperator'>|</span>Found total _TOTAL_ records",
-                        "infoEmpty": "No records found to show",
-                        "emptyTable": "No data available in table",
-                        "zeroRecords": "No matching records found",
+                        "infoEmpty": "Aucune donnée à afficher",
+                        "emptyTable": "Aucune donnée trouvée",
+                        "zeroRecords": "Aucun enregistrement correspondant",
                         "paginate": {
-                            "previous": "Prev",
-                            "next": "Next",
-                            "last": "Last",
-                            "first": "First",
+                            "previous": "Prec",
+                            "next": "Suiv",
+                            "last": "Dernier",
+                            "first": "Premier",
                             "page": "Page",
-                            "pageOf": "of"
+                            "pageOf": "des"
                         }
                     },
 

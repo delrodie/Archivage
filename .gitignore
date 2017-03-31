@@ -15,3 +15,5 @@
 /vendor/
 /web/bundles/
 /src/AppBundle/Entity/*~
+!/web/ressources/uploads/doc
+/web/ressources/uploads/doc/*
