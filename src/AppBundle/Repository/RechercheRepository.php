@@ -10,4 +10,32 @@ namespace AppBundle\Repository;
  */
 class RechercheRepository extends \Doctrine\ORM\EntityRepository
 {
+  /**
+        * recherche dans la base données
+        *
+        * @author Delrodie AMOIKON
+        * Date: 31/03/2017
+        */
+       public function getResultat($libelle){
+         $em = $this->getEntityManager();
+          $qb = $em->createQuery('
+              SELECT b
+              FROM AppBundle:Definitive b
+              JOIN b.provisoire p
+              WHERE p.libelle LIKE :lib
+              OR p.description LIKE :lib
+              OR b.libelle LIKE :lib
+              OR b.description LIKE :lib
+          ')
+            ->setParameter('lib', '%'.$libelle.'%')
+          ;
+          try {
+              $result = $qb->getResult();
+
+              return $result;
+
+          } catch (NoResultException $e) {
+              return $e;
+          }
+       }
 }

@@ -45,10 +45,19 @@ class RechercheController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($recherche);
-            $em->flush($recherche);
+            //$em->persist($recherche);
+            //$em->flush($recherche);
 
-            return $this->redirectToRoute('recherche_show', array('id' => $recherche->getId()));
+            $libelle = $recherche->getLibelle();
+
+          //die($libelle);
+
+            $recherches = $em->getRepository('AppBundle:Recherche')->getResultat($libelle);
+
+            return $this->render('recherche/index.html.twig', array(
+                'recherches' => $recherches,
+                'libelle' => $libelle,
+            ));
         }
 
         return $this->render('recherche/new.html.twig', array(
